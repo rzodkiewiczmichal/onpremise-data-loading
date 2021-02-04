@@ -9,15 +9,15 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-tasks:
-- task: AzureResourceManagerTemplateDeployment@3
-  inputs:
-    deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'Bezpłatna wersja próbna(982f6556-c78d-4dd7-adac-f5fb1aec84c1)'
-    subscriptionId: '982f6556-c78d-4dd7-adac-f5fb1aec84c1'
-    action: 'Create Or Update Resource Group'
-    resourceGroupName: 'onpremise-data-loading'
-    location: 'Germany West Central'
-    templateLocation: 'URL of the file'
-    csmFileLink: 'https://github.com/rzodkiewiczmichal/onpremise-data-loading/tree/main/infrastructure'
-    deploymentMode: 'Incremental'
+steps:
+  - task: AzureResourceManagerTemplateDeployment@3
+    inputs:
+      deploymentScope: 'Resource Group'
+      azureResourceManagerConnection: 'Bezpłatna wersja próbna(982f6556-c78d-4dd7-adac-f5fb1aec84c1)'
+      subscriptionId: '982f6556-c78d-4dd7-adac-f5fb1aec84c1'
+      action: 'Create Or Update Resource Group'
+      resourceGroupName: 'onpremise-data-loading'
+      location: 'Germany West Central'
+      templateLocation: 'URL of the file'
+      csmFileLink: 'https://github.com/rzodkiewiczmichal/onpremise-data-loading/tree/main/infrastructure'
+      deploymentMode: 'Incremental'
