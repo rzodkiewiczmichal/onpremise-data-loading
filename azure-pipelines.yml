@@ -9,11 +9,15 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Bezpłatna wersja próbna(982f6556-c78d-4dd7-adac-f5fb1aec84c1)'
+    subscriptionId: '982f6556-c78d-4dd7-adac-f5fb1aec84c1'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'onpremise-data-loading'
+    location: 'Germany West Central'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://github.com/rzodkiewiczmichal/onpremise-data-loading/tree/main/infrastructure'
+    deploymentMode: 'Incremental'
