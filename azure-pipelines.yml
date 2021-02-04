@@ -19,5 +19,5 @@ steps:
       resourceGroupName: 'onpremise-data-loading'
       location: 'Germany West Central'
       templateLocation: 'URL of the file'
-      csmFileLink: 'https://github.com/rzodkiewiczmichal/onpremise-data-loading/tree/main/infrastructure'
+      csmFileLink: 'https://raw.githubusercontent.com/rzodkiewiczmichal/onpremise-data-loading/main/infrastructure/template.json'
       deploymentMode: 'Incremental'
